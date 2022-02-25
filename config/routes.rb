@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
-    get '/', to: 'messages#index'
+    get '/messages', to: 'messages#index'
   end
 
   get '*page', to: 'static#index', constraints: ->(req) do
