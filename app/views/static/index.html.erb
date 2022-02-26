@@ -1,12 +1,2 @@
 <%= javascript_pack_tag 'application' %>
-
-
-<%= react_component("Greeting", {msgProps: "Hello guys"}) %>
 <%= react_component("App") %>
-
-
-<% @messages.each do |message| %>
-  <div class="">
-    <h2><% message.content %></h2>
-  </div>
-<% end %> 

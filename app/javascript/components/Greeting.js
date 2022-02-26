@@ -1,26 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchmessage } from '../redux/message/api';
+// import PropTypes from "prop-types"
 
-const Greeting = ({ msgProps }) => (
-  <>
-    Messagas:
-    {' '}
-    {msgProps}
-  </>
-);
+const Greeting = () => {
+  const message = useSelector((state) => state.messageReducer.message);
+  // console.log('message => ', message);
 
-// class Greeting extends React.Component {
-//   render() {
-//     return (
-//     );
-//   }
-// }
+  const dispatch = useDispatch();
 
-Greeting.propTypes = {
-  msgProps: PropTypes.string,
+  const handleClick = () => {
+    dispatch(fetchmessage());
+    console.log('hi there');
+  };
+
+  return (
+    <div>
+      <h1>Greeting</h1>
+      <div>
+        Message:
+        {' '}
+        {message}
+      </div>
+      <button type="button" onClick={handleClick}>GREETING</button>
+    </div>
+  );
 };
 
-Greeting.defaultProps = {
-  msgProps: 'Ben',
-};
 export default Greeting;

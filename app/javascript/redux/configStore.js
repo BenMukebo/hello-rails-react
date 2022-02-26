@@ -1,19 +1,14 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import messageReducer, { fetchmessage } from './message/api';
 
-const initialState = {
-  messages: [],
-};
+const reducer = combineReducers({
+  messageReducer,
+});
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk),
+);
 
-function rootReducer(state, action) {
-  console.log(action.type);
-
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
-
-export default function configureStore() {
-  const store = createStore(rootReducer, initialState);
-  return store;
-}
+store.dispatch(fetchmessage());
+export default store;
