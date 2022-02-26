@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     get '/messages', to: 'messages#index'
@@ -9,4 +8,4 @@ Rails.application.routes.draw do
   end
 
     root 'static#index'
-end
+end   

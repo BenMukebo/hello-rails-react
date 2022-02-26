@@ -1,19 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Greeting extends React.Component {
-  render() {
-    return (
-      <>
-        Message:
-        {' '}
-        {this.props.message}
-      </>
-    );
-  }
-}
+const Greeting = ({ msgProps }) => (
+  <>
+    Messagas:
+    {' '}
+    {msgProps}
+  </>
+);
+
+// class Greeting extends React.Component {
+//   render() {
+//     return (
+//     );
+//   }
+// }
 
 Greeting.propTypes = {
-  message: PropTypes.string,
+  msgProps: PropTypes.string,
+};
+
+Greeting.defaultProps = {
+  msgProps: 'Ben',
 };
 export default Greeting;
