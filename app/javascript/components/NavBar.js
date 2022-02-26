@@ -4,16 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => (
   <div>
-    <ul>
-      <NavLink to="/" activeclassname="active">
-        Home
-      </NavLink>
-      {' '}
-      |
-      <NavLink to="/hello" activeclassname="active">
+    <NavLink to="/" activeclassname="active">
+      Home
+    </NavLink>
+    {' '}
+    {/* <NavLink to="/hello" activeclassname="active">
         greeting
-      </NavLink>
-    </ul>
+      </NavLink> */}
   </div>
 );
 

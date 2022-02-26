@@ -3,22 +3,16 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Greeting from './Greeting';
-import Home from './Home';
-import NavBar from './NavBar';
+// import Home from './Home';
+// import NavBar from './NavBar';
 import store from '../redux/configStore';
-
 
 const App = () => (
   <Provider store={store}>
     <BrowserRouter>
-      <NavBar />
+      {/* <NavBar /> */}
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route
-          exact
-          path="/hello"
-          element={<Greeting />}
-        />
+        <Route exact path="/" element={<Greeting />} />
       </Routes>
     </BrowserRouter>
   </Provider>
